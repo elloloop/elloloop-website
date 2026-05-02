@@ -1,0 +1,54 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'elloloop — Building the future of learning and developer tools.' } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://elloloop.com" />
+    <link rel="canonical" href="https://elloloop.com" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="logo">ello<span>loop</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="/#products">Products</a></li>
+            <li><a href="https://github.com/elloloop" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="/privacy-policy">Privacy</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <p>© {new Date().getFullYear()} elloloop LTD. All rights reserved.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="mailto:info@elloloop.com">Contact</a></li>
+          <li><a href="https://github.com/elloloop" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
