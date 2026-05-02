@@ -28,6 +28,12 @@
   --radius-xl: var(--ru-radius-lg);
 }
 
+@layer base {
+  *, ::before, ::after {
+    border-color: var(--color-border);
+  }
+}
+
 :root {
   --color-bg: var(--ru-color-background);
   --color-surface: var(--ru-color-card);

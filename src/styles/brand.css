@@ -65,20 +65,20 @@
   --ru-color-primary: #818cf8;
   --ru-color-primary-foreground: #0f172a;
   --ru-color-secondary: #1e293b;
-  --ru-color-secondary-foreground: #f1f5f9;
+  --ru-color-secondary-foreground: #f8fafc;
   --ru-color-muted: #1e293b;
-  --ru-color-muted-foreground: #94a3b8;
-  --ru-color-accent: #1e293b;
-  --ru-color-accent-foreground: #f1f5f9;
+  --ru-color-muted-foreground: #64748b;
+  --ru-color-accent: #334155;
+  --ru-color-accent-foreground: #f8fafc;
   --ru-color-destructive: #f87171;
   --ru-color-destructive-foreground: #1c1917;
-  --ru-color-border: #334155;
-  --ru-color-input: #334155;
+  --ru-color-border: #1e293b;
+  --ru-color-input: #1e293b;
   --ru-color-ring: #818cf8;
   --ru-color-card: #0f172a;
-  --ru-color-card-foreground: #ededed;
+  --ru-color-card-foreground: #f8fafc;
   --ru-color-popover: #0f172a;
-  --ru-color-popover-foreground: #ededed;
+  --ru-color-popover-foreground: #f8fafc;
 
   --ru-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --ru-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
