@@ -1,5 +1,7 @@
 ---
+import '../styles/brand.css';
 import '../styles/global.css';
+import ThemeController from '../components/ThemeController';
 
 interface Props {
   title: string;
@@ -31,6 +33,7 @@ const { title, description = 'elloloop — Building the future of learning.' } =
             <li><a href="/#products">Products</a></li>
             <li><a href="https://github.com/elloloop" target="_blank" rel="noopener">GitHub</a></li>
             <li><a href="/privacy-policy">Privacy</a></li>
+            <li><ThemeController client:load /></li>
           </ul>
         </nav>
       </div>
