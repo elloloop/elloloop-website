@@ -1,7 +1,7 @@
 ---
+import { ThemeScript, ThemeToggle } from '@refraction-ui/astro';
 import '../styles/brand.css';
 import '../styles/global.css';
-import ThemeController from '../components/ThemeController';
 
 interface Props {
   title: string;
@@ -23,19 +23,42 @@ const { title, description = 'elloloop — Building the future of learning.' } =
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://elloloop.com" />
     <link rel="canonical" href="https://elloloop.com" />
+    <ThemeScript />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" id="site-header">
       <div class="header-inner">
         <a href="/" class="logo">ello<span>loop</span></a>
-        <nav>
+        
+        <nav class="desktop-nav hidden md:flex">
           <ul class="nav-links">
             <li><a href="/#products">Products</a></li>
             <li><a href="https://github.com/elloloop" target="_blank" rel="noopener">GitHub</a></li>
             <li><a href="/privacy-policy">Privacy</a></li>
-            <li><ThemeController client:load /></li>
           </ul>
         </nav>
+
+        <div class="header-actions">
+          <div class="hidden md:block">
+            <ThemeToggle />
+          </div>
+          <button id="mobile-menu-btn" class="mobile-menu-btn md:hidden" aria-label="Menu">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div id="mobile-menu" class="mobile-menu hidden">
+        <nav>
+          <ul class="mobile-nav-links">
+            <li><a href="/#products">Products</a></li>
+            <li><a href="https://github.com/elloloop" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="/privacy-policy">Privacy</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
 
@@ -53,5 +76,23 @@ const { title, description = 'elloloop — Building the future of learning.' } =
         </ul>
       </div>
     </footer>
+
+    <script is:inline>
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+    </script>
   </body>
 </html>
