@@ -1,4 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@source "../../node_modules/@refraction-ui/astro/dist";
+
+@theme inline {
+  --color-background: var(--ru-color-background);
+  --color-foreground: var(--ru-color-foreground);
+  --color-muted: var(--ru-color-muted);
+  --color-muted-foreground: var(--ru-color-muted-foreground);
+  --color-popover: var(--ru-color-popover);
+  --color-popover-foreground: var(--ru-color-popover-foreground);
+  --color-card: var(--ru-color-card);
+  --color-card-foreground: var(--ru-color-card-foreground);
+  --color-border: var(--ru-color-border);
+  --color-input: var(--ru-color-input);
+  --color-primary: var(--ru-color-primary);
+  --color-primary-foreground: var(--ru-color-primary-foreground);
+  --color-secondary: var(--ru-color-secondary);
+  --color-secondary-foreground: var(--ru-color-secondary-foreground);
+  --color-accent: var(--ru-color-accent);
+  --color-accent-foreground: var(--ru-color-accent-foreground);
+  --color-destructive: var(--ru-color-destructive);
+  --color-destructive-foreground: var(--ru-color-destructive-foreground);
+  --color-ring: var(--ru-color-ring);
+  --radius-sm: var(--ru-radius-sm);
+  --radius-md: var(--ru-radius);
+  --radius-lg: var(--ru-radius-md);
+  --radius-xl: var(--ru-radius-lg);
+}
 
 :root {
   --color-bg: var(--ru-color-background);
@@ -107,10 +135,6 @@ a:hover {
   border-top: 1px solid var(--color-border);
   display: flex;
   justify-content: center;
-}
-
-.hidden {
-  display: none !important;
 }
 
 .header-inner {
@@ -431,14 +455,7 @@ a:hover {
 }
 
 /* ── Responsive ──────────────────────── */
-@media (min-width: 769px) {
-  .md\:flex { display: flex !important; }
-  .md\:hidden { display: none !important; }
-  .md\:block { display: block !important; }
-}
-
 @media (max-width: 768px) {
-  .desktop-nav { display: none; }
   .header-inner { padding: 1rem; }
   .hero { padding: 5rem 1.5rem; }
   .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
